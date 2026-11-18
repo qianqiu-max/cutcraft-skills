@@ -17,6 +17,7 @@
 | [漂浮文字](skills/floating-text-video/) | 将文案分层漂移，按主体蒙版控制文字和主体的前后关系。 |
 | [教程复刻](skills/tutorial-video-recreation/) | 把新教程拆成时间码、图层、关键帧及验收点，再换成自己的素材重做。页面演示的是拆解过程。 |
 | [纸飞机拉幕开场](skills/airplane-curtain-reveal/) | 黑场先从片名笔画透出风景，折纸飞机斜飞拉开弧形幕。可换图片、视频或片名，并保留可重渲工程。 |
+| [文字穿越开场](skills/text-flythrough-opening/) | 让视频透过标题显现，沿一笔推近到全屏。可换片名、调整入场节奏，并保留底片的运动和声音。 |
 
 Skill 遵循公开目录格式，可以直接下载。实际执行需要对应的 Python、FFmpeg、Blender 或剪辑软件，依赖见各自的说明。每次制作只准备所选 Skill 需要的工具。[Agent Skills 格式](https://agentskills.io/specification)
 
