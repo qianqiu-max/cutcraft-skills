@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "purpose": "Optional discovery examples. Use sources permitted for the active project and verify each asset's license.",
+  "sites": [
+    {
+      "id": "mixkit",
+      "name": "Mixkit",
+      "url": "https://mixkit.co/",
+      "search_roles": [
+        "stock_video",
+        "background_video",
+        "music",
+        "sound_effect"
+      ]
+    },
+    {
+      "id": "ysjf_material",
+      "name": "影视飓风素材库",
+      "url": "https://www.ysjf.com/material",
+      "search_roles": [
+        "stock_video",
+        "background_video",
+        "visual_overlay"
+      ]
+    },
+    {
+      "id": "fresh_luts",
+      "name": "Fresh LUTs",
+      "url": "https://freshluts.com/",
+      "search_roles": [
+        "lut",
+        "color_grading_reference"
+      ]
+    },
+    {
+      "id": "filmgrab",
+      "name": "FilmGrab",
+      "url": "https://film-grab.com/",
+      "search_roles": [
+        "composition_reference",
+        "lighting_reference",
+        "color_reference"
+      ],
+      "reference_only_by_default": true
+    },
+    {
+      "id": "fonts_net_cn",
+      "name": "字体天下",
+      "url": "https://www.fonts.net.cn/",
+      "search_roles": [
+        "font"
+      ]
+    },
+    {
+      "id": "xinpianchang_stock",
+      "name": "场选素材",
+      "url": "https://stock.xinpianchang.com/",
+      "search_roles": [
+        "stock_video",
+        "background_video",
+        "visual_overlay"
+      ]
+    },
+    {
+      "id": "33tc",
+      "name": "33台词网",
+      "url": "https://33tc.net/",
+      "search_roles": [
+        "dialogue_lookup",
+        "film_scene_identification"
+      ],
+      "reference_only_by_default": true
+    },
+    {
+      "id": "epidemic_sound",
+      "name": "Epidemic Sound",
+      "url": "https://www.epidemicsound.com/",
+      "search_roles": [
+        "music",
+        "sound_effect"
+      ]
+    }
+  ]
+}

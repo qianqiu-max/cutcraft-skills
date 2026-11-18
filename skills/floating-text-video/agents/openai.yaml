@@ -1,0 +1,4 @@
+interface:
+  display_name: "文字漂浮与人物遮挡剪辑"
+  short_description: "用图片或视频制作横向流动、发光书法字，并保护人物不被文字遮挡"
+  default_prompt: "请使用 $floating-text-video，根据我提供的素材制作从左往右流动且不遮挡人物的文字漂浮视频，交付成片与可编辑工程。"

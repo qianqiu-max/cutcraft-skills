@@ -1,0 +1,4 @@
+interface:
+  display_name: "唱片转场剪辑"
+  short_description: "提供视频或图片素材，通过剪辑软件制作云朵转场和旋转唱片播放器，并交付可编辑工程"
+  default_prompt: "使用 $vinyl-record-transition，根据我提供的素材制作唱片转场视频，保存剪辑工程和成片。"

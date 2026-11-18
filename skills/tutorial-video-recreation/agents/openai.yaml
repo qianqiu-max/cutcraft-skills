@@ -1,0 +1,4 @@
+interface:
+  display_name: "跟着教程复刻效果"
+  short_description: "分析参考片段，用自己的素材重建时间线，交付成片与编辑工程。"
+  default_prompt: "请使用 $tutorial-video-recreation 分析附件里的剪辑教程，用我提供的创作素材复现效果。"

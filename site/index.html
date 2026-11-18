@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#131516">
+  <meta name="description" content="预览真实剪辑效果，挑选配方，复制提示词交给你的 AI Agent 制作。">
+  <title>Cutcraft 剪辑配方库</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#library">跳到配方库</a>
+  <header class="masthead">
+    <div class="container nav-row">
+      <a href="./" class="brand" aria-label="Cutcraft 剪辑配方库首页"><span class="cut-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Cutcraft</span><span class="brand-sub">剪辑配方库</span></a>
+      <nav aria-label="主导航">
+        <a href="#library" class="nav-library">浏览配方</a>
+        <a href="#usage" class="nav-guide">使用说明</a>
+        <a href="https://github.com/qianqiu-max/cutcraft-skills" data-repository class="repo-link">GitHub <span class="icon i-external" aria-hidden="true"></span></a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="feature" aria-labelledby="feature-title">
+      <div class="container feature-grid">
+        <div class="feature-copy">
+          <div class="feature-kicker"><span class="signal" aria-hidden="true"></span>精选配方</div>
+          <h1 id="feature-title">剪辑配方库</h1>
+          <p id="feature-summary">预览剪辑效果，复制提示词，交给你的 AI Agent 复刻。</p>
+          <div id="feature-actions" class="feature-actions" hidden>
+            <button type="button" id="feature-copy" class="button-primary"><span class="icon i-copy" aria-hidden="true"></span>复制提示词</button>
+            <a id="feature-detail" class="button-text" href="#library">查看配方 <span class="icon i-next" aria-hidden="true"></span></a>
+          </div>
+        </div>
+        <div class="monitor" id="feature-player" aria-label="精选配方效果预览">
+          <div class="monitor-stage"><video id="feature-video" playsinline muted loop preload="metadata" aria-label="精选配方效果预览"></video></div>
+          <div class="transport" id="feature-controls" hidden>
+            <button type="button" class="icon-button play-toggle" id="feature-play" aria-label="播放预览"><span class="icon i-play" aria-hidden="true"></span></button>
+            <input id="feature-seek" type="range" min="0" max="100" step="0.01" value="0" aria-label="预览进度">
+            <span class="time-readout"><span id="play-time">00:00</span> <span class="time-divider">/</span> <span id="total-time">--:--</span></span>
+            <button type="button" class="icon-button" id="feature-expand" aria-label="全屏预览" hidden><span class="icon i-expand" aria-hidden="true"></span></button>
+          </div>
+          <p id="media-error" class="media-error" role="status" hidden>预览暂时无法播放，可以继续查看配方。</p>
+        </div>
+      </div>
+    </section>
+    <section class="library container" id="library" aria-labelledby="library-title">
+      <div class="library-head">
+        <div class="section-title"><h2 id="library-title">全部配方</h2><span id="library-count" class="count"></span></div>
+        <label class="search-box"><span class="icon i-search" aria-hidden="true"></span><input type="search" id="search" aria-label="搜索配方" placeholder="搜索配方、效果或工具" autocomplete="off"></label>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="按分类筛选"></div>
+      <p class="sr-only" id="results-status" role="status"></p>
+      <div class="cards" id="cards"></div>
+      <div id="empty" class="empty" hidden><h3>没有找到匹配的配方</h3><p>换个关键词，或查看全部分类。</p><button type="button" class="button-line" id="reset">清除筛选</button></div>
+      <div id="load-error" class="empty" hidden><h3>配方目录加载失败</h3><button type="button" class="button-line" id="retry">重新加载</button></div>
+      <noscript><p>请启用 JavaScript 观看预览，或直接在 <a href="https://github.com/qianqiu-max/cutcraft-skills">GitHub 查看配方</a>。</p></noscript>
+    </section>
+    <section class="usage container" id="usage" aria-labelledby="usage-title">
+      <h2 id="usage-title">怎么使用配方？</h2>
+      <ol>
+        <li><strong>挑选效果</strong><span>播放预览，查看配方需要的素材。</span></li>
+        <li><strong>复制提示词</strong><span>每条提示词都附有对应的技能地址。</span></li>
+        <li><strong>交给 Agent</strong><span>粘贴提示词，提供自己的素材，按配方生成。</span></li>
+      </ol>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><span class="footer-brand">Cutcraft</span><div class="footer-links"><a href="./downloads/cutcraft-skills.zip" download>下载完整技能库</a><a href="https://github.com/qianqiu-max/cutcraft-skills" data-repository>GitHub 仓库 <span class="icon i-external" aria-hidden="true"></span></a></div></div></footer>
+  <dialog id="skill-dialog" class="skill-dialog" aria-labelledby="detail-title">
+    <div class="dialog-body">
+      <div class="dialog-top"><span id="detail-category" class="detail-category"></span><button type="button" class="icon-button dialog-close" id="detail-close" autofocus aria-label="关闭配方"><span class="icon i-close" aria-hidden="true"></span></button></div>
+      <h2 id="detail-title"></h2>
+      <p class="detail-summary" id="detail-summary"></p>
+      <video id="detail-video" class="detail-video" controls playsinline loop preload="metadata" aria-label="配方视频预览"></video>
+      <div class="detail-meta"><div><h3>所需素材</h3><ul id="detail-inputs"></ul></div><div><h3>执行工具</h3><p id="detail-engine"></p></div></div>
+      <div class="prompt-panel"><div><h3>完整提示词</h3><button class="button-primary" type="button" id="detail-copy"><span class="icon i-copy" aria-hidden="true"></span>复制提示词</button></div><textarea id="detail-prompt" readonly aria-label="完整提示词"></textarea></div>
+      <div class="detail-links"><a id="detail-source" class="source-link" href="https://github.com/qianqiu-max/cutcraft-skills">查看技能源码 <span class="icon i-external" aria-hidden="true"></span></a><a id="detail-download" class="source-link" hidden download>下载 Skill</a></div>
+      <p id="detail-status" role="status" class="detail-status"></p>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
